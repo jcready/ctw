@@ -1,14 +1,24 @@
 {
-  "lanetix": [{
-    "event": {
-      "name": "workflowPostStageAdvance",
-      "recordType": "war"
-    },
-    "environment": {
-      "timeout": 100
-    },
-    "path": "dist/war.workflowPostStageAdvance.js"
-  }],
+  "lanetix": {
+    "defaultConfigs": [
+      {
+        "breakLoop": true,
+        "chancesToWin": {
+          "arm": 0.1,
+          "assess_damage": 0.2,
+          "fight": 0.3,
+          "fight_war_complete": 1
+        },
+        "contentPattern": {
+          "workflow": {
+            "apiName": "fight_war"
+          }
+        },
+        "handler": "src/war.workflowPostStageAdvance.js",
+        "subject": "workflowPostStageAdvance"
+      }
+    ]
+  },
   "scripts": {
     "test": "gulp",
     "lint": "gulp lint",
